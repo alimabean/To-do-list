@@ -4,4 +4,7 @@ Angular 5, Express
 
 Install docker
 
-run: ./scripts/init.sh
+run: 
+```
+./scripts/init.sh
+```
