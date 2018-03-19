@@ -1,19 +1,21 @@
 const express = require('express');
-const router = express.Router();
-const models = require('../models/models');
-const mongoose = require('mongoose');
-const task = models.task;
-const user = models.user;
+const Models = require('../models/models');
+var router = express.Router();
+var task = Models.task;
+// const user = models.user;
 
 router.get('/', (req, res) => {
-	task.find((err, result) => {
-		res.send(result);
-	});
+	console.log("received connection");
+	// task.find((err, result) => {
+		// res.send(result);
+	res.send({"msg": 'hello world'});
+	// });
 });
 
 router.post('/task', (req, res) => {
 	let _task = new task;
 	_task.info = req.body.info;
+	console.log(_task.info);
 	_task.creator = req.body.creator;
 	_task.status = req.body.status;
 	_task.created_at = req.body.created_at; 

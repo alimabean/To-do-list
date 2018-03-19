@@ -1,10 +1,10 @@
-version: '3'
+version: '2'
 
 services:
   mongodb:
     image: mongo
     ports:
-      - 27017:27017
+      - "27017:27017"
 
   backend:
     container_name: backend
@@ -14,4 +14,7 @@ services:
     depends_on:
       - mongodb
     ports:
-      - 3000:3000
+      - "3000:3000"
+    volumes:
+      - ../Backend:/usr/src
+      - /usr/src/node_modules

@@ -9,7 +9,10 @@ var taskSchema = new Schema({
 		type: String,
 		default: "anon"
 	},
-	status: String,
+	status: {
+		type: String,
+		default: "open",
+	},
 	created_at: {
 		type: Number,
 		default: (new Date().getTime())
